@@ -1,11 +1,6 @@
 import {moods} from '../../../data/moods';
 import {MoodPayload} from '../../../interfaces/mood_payload';
-
-interface IMoodStatistics {
-  mood: Mood;
-  moodCount: number;
-  moodPercentage: number;
-}
+import {MoodStatistics} from '../interface/mood_statistics';
 
 export const useMoodStatistics = ({
   storedMoods,
@@ -13,7 +8,7 @@ export const useMoodStatistics = ({
   storedMoods: MoodPayload[];
 }) => {
   const totalMoods = storedMoods?.length ?? 0;
-  const moodStatistics: IMoodStatistics[] =
+  const moodStatistics: MoodStatistics[] =
     moods.map(mood => {
       const moodCount = storedMoods.filter(
         sm => sm.mood.title === mood.title,

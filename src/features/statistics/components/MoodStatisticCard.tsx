@@ -18,7 +18,9 @@ export const MoodStatisticCard: React.FC<IMoodStatisticCard> = ({
         backgroundColor: 'white',
         paddingVertical: 16,
         paddingHorizontal: 12,
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+        boxShadow: [
+          {offsetX: 0, offsetY: 2, blurRadius: 4, color: 'rgba(0, 0, 0, 0.1)'},
+        ],
       }}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View

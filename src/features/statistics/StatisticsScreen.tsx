@@ -14,24 +14,28 @@ export const StatisticsScreen = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
-      <View style={{padding: 10, gap: 16}}>
-        {preference === StatsShowMode.BAR ? <MoodBarChart /> : <MoodPieChart />}
-        <FlatList
-          numColumns={2}
-          data={moodStatistics}
-          style={{paddingVertical: 10}}
-          contentContainerStyle={{gap: 16}}
-          columnWrapperStyle={{justifyContent: 'space-between', gap: 16}}
-          renderItem={({item}) => (
-            <View style={{flex: 1}}>
-              <MoodStatisticCard
-                mood={item.mood}
-                percentage={item.moodPercentage}
-              />
-            </View>
-          )}
-        />
+      <View style={{margin: 10}}>
+        {preference === StatsShowMode.BAR ? (
+          <MoodBarChart />
+        ) : (
+          <MoodPieChart statistics={moodStatistics} />
+        )}
       </View>
+
+      <FlatList
+        numColumns={2}
+        data={moodStatistics}
+        contentContainerStyle={{gap: 16, padding: 10}}
+        columnWrapperStyle={{justifyContent: 'space-between', gap: 16}}
+        renderItem={({item}) => (
+          <View style={{flex: 1}}>
+            <MoodStatisticCard
+              mood={item.mood}
+              percentage={item.moodPercentage}
+            />
+          </View>
+        )}
+      />
     </View>
   );
 };
