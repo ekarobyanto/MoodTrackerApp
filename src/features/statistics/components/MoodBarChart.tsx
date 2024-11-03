@@ -1,5 +1,6 @@
 import {View} from 'react-native';
+import {AppText} from '../../../components/AppText';
 
 export const MoodBarChart = () => {
-  return <View />;
+  return <AppText>Bar</AppText>;
 };

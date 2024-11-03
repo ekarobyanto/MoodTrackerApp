@@ -3,10 +3,10 @@ import {AppText} from '../../components/AppText';
 
 import {MoodCard} from './components/MoodCard';
 import {moods} from '../../data/moods';
-import {useMoodAsyncStorage} from '../../hooks/useMoodAsyncStorage';
+import {useMoodsContext} from '../../contexts/MoodsContext';
 
 export const HomeScreen = () => {
-  const {addMood} = useMoodAsyncStorage();
+  const {addMood} = useMoodsContext();
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>

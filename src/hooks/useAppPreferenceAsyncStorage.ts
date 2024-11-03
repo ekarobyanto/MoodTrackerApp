@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {useAppAsyncStorage} from './useAppAsyncStorage';
 import {StatsShowMode} from '../enums/stats_show_mode';
 
@@ -11,13 +11,14 @@ export const useAppPreferenceAsyncStorage = () => {
     return preference ?? StatsShowMode.PIE;
   };
 
-  const initPreference = async () => {
+  const initPreference = useCallback(async () => {
     const pref = await getPreference();
     setPreferenceState(pref);
-  };
+  }, []);
 
   const setPreference = async (preference: StatsShowMode) => {
     await storeData('preference', preference);
+    initPreference();
   };
 
   useEffect(() => {

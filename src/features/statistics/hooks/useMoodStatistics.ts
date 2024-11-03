@@ -1,5 +1,5 @@
+import {useMoodsContext} from '../../../contexts/MoodsContext';
 import {moods} from '../../../data/moods';
-import {useMoodAsyncStorage} from '../../../hooks/useMoodAsyncStorage';
 
 interface IMoodStatistics {
   mood: Mood;
@@ -8,7 +8,7 @@ interface IMoodStatistics {
 }
 
 export const useMoodStatistics = () => {
-  const {moods: storedMoods} = useMoodAsyncStorage();
+  const {storedMoods} = useMoodsContext();
 
   const totalMoods = storedMoods?.length ?? 0;
   const moodStatistics: IMoodStatistics[] =

@@ -1,7 +1,6 @@
-import {useCallback, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {MoodPayload} from '../interfaces/mood_payload';
 import {useAppAsyncStorage} from './useAppAsyncStorage';
-import {useFocusEffect} from '@react-navigation/native';
 
 export const useMoodAsyncStorage = () => {
   const {getData, storeData} = useAppAsyncStorage();
@@ -11,9 +10,9 @@ export const useMoodAsyncStorage = () => {
     await getMoods().then(data => setMoods(data ?? []));
   }, []);
 
-  useFocusEffect(() => {
+  useEffect(() => {
     fetchMoods();
-  });
+  }, []);
 
   const addMood = async (mood: MoodPayload) => {
     await storeData('moods', [...moods, mood]);

@@ -1,5 +1,4 @@
 import React from 'react';
-import {DefaultTemplate} from '../App';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
@@ -9,6 +8,7 @@ import {StyleSheet} from 'react-native';
 import {HomeScreen} from '../features/home/HomeScreen';
 import {AppText} from '../components/AppText';
 import {StatisticsScreen} from '../features/statistics/StatisticsScreen';
+import {SettingsScreen} from '../features/settings/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,13 +34,29 @@ export const RootNavigator = () => {
       tabBarIcon: ({color}) => (
         <Feather name="pie-chart" style={styles.icon} color={color} />
       ),
+      options: {
+        headerShown: true,
+        headerTitle: 'Statistics',
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      },
     },
     {
       name: 'Settings',
-      component: DefaultTemplate,
+      component: SettingsScreen,
       tabBarIcon: ({color}) => (
         <Feather name="settings" style={styles.icon} color={color} />
       ),
+      options: {
+        headerShown: true,
+        headerTitle: 'Settings',
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      },
     },
   ];
 
