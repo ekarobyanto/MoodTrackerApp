@@ -4,16 +4,20 @@ import React from 'react';
 import {RootNavigator} from './navigation/RootNavigator';
 import {AppPreferenceContextProvider} from './contexts/AppPreferenceContext';
 import {MoodsContextProvider} from './contexts/MoodsContext';
+import Toast from 'react-native-toast-message';
 
 function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <MoodsContextProvider>
-        <AppPreferenceContextProvider>
-          <RootNavigator />
-        </AppPreferenceContextProvider>
-      </MoodsContextProvider>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <MoodsContextProvider>
+          <AppPreferenceContextProvider>
+            <RootNavigator />
+          </AppPreferenceContextProvider>
+        </MoodsContextProvider>
+      </NavigationContainer>
+      <Toast />
+    </>
   );
 }
 

@@ -4,12 +4,12 @@ import {useMoodAsyncStorage} from '../hooks/useMoodAsyncStorage';
 
 interface IMoodsContext {
   storedMoods: MoodPayload[];
-  addMood: (mood: MoodPayload) => void;
+  addMood: (mood: MoodPayload) => Promise<void>;
 }
 
 const MoodsContext = createContext<IMoodsContext>({
   storedMoods: [],
-  addMood: _ => console.warn('unimplemented'),
+  addMood: async _ => console.warn('unimplemented'),
 });
 
 export const MoodsContextProvider: React.FC<{children: ReactNode}> = ({
