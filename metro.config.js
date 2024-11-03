@@ -15,7 +15,7 @@ const configWithMonicon = withMonicon(config, {
     'tabler:mood-sad-filled',
     'material-symbols:sentiment-stressed-rounded',
   ],
-  collections: ['ion', 'iconamoon', 'tabler', 'material-symbols'],
+  collections: [],
 });
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), configWithMonicon);
