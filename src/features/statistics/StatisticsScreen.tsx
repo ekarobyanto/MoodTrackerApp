@@ -16,7 +16,7 @@ export const StatisticsScreen = () => {
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <View style={{margin: 10}}>
         {preference === StatsShowMode.BAR ? (
-          <MoodBarChart />
+          <MoodBarChart statistics={moodStatistics} />
         ) : (
           <MoodPieChart statistics={moodStatistics} />
         )}
