@@ -15,7 +15,7 @@ export const MoodCard: React.FC<IMoodCard> = ({mood, onPress}) => {
         return {
           gap: 16,
           borderRadius: 8,
-          paddingVertical: 8,
+          paddingVertical: 16,
           paddingHorizontal: 24,
           alignItems: 'center',
           flexDirection: 'row',

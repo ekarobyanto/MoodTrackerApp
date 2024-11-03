@@ -13,16 +13,16 @@ export const moods: Mood[] = [
     backgroundColor: '#FFFAE4',
   },
   {
-    title: 'Sad',
-    icon: props => <IconMoodSad {...props} />,
-    primaryColor: '#4370F2',
-    backgroundColor: '#E9EFFF',
-  },
-  {
     title: 'Neutral',
     icon: props => <IconMoodNeutral {...props} />,
     primaryColor: '#7DE4EA',
     backgroundColor: '#E8FEFF',
+  },
+  {
+    title: 'Sad',
+    icon: props => <IconMoodSad {...props} />,
+    primaryColor: '#4370F2',
+    backgroundColor: '#E9EFFF',
   },
   {
     title: 'Stress',
