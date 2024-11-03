@@ -5,10 +5,12 @@ import {MoodPieChart} from './components/MoodPieChart';
 import {useMoodStatistics} from './hooks/useMoodStatistics';
 import {MoodStatisticCard} from './components/MoodStatisticCard';
 import {useAppPreferenceContext} from '../../contexts/AppPreferenceContext';
+import {useMoodsContext} from '../../contexts/MoodsContext';
 
 export const StatisticsScreen = () => {
+  const {storedMoods} = useMoodsContext();
   const {preference} = useAppPreferenceContext();
-  const {moodStatistics} = useMoodStatistics();
+  const {moodStatistics} = useMoodStatistics({storedMoods});
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -16,7 +18,7 @@ export const StatisticsScreen = () => {
         {preference === StatsShowMode.BAR ? <MoodBarChart /> : <MoodPieChart />}
         <FlatList
           numColumns={2}
-          data={moodStatistics ?? []}
+          data={moodStatistics}
           style={{paddingVertical: 10}}
           contentContainerStyle={{gap: 16}}
           columnWrapperStyle={{justifyContent: 'space-between', gap: 16}}

@@ -1,5 +1,5 @@
-import {useMoodsContext} from '../../../contexts/MoodsContext';
 import {moods} from '../../../data/moods';
+import {MoodPayload} from '../../../interfaces/mood_payload';
 
 interface IMoodStatistics {
   mood: Mood;
@@ -7,9 +7,11 @@ interface IMoodStatistics {
   moodPercentage: number;
 }
 
-export const useMoodStatistics = () => {
-  const {storedMoods} = useMoodsContext();
-
+export const useMoodStatistics = ({
+  storedMoods,
+}: {
+  storedMoods: MoodPayload[];
+}) => {
   const totalMoods = storedMoods?.length ?? 0;
   const moodStatistics: IMoodStatistics[] =
     moods.map(mood => {
@@ -19,7 +21,7 @@ export const useMoodStatistics = () => {
       return {
         mood: mood,
         moodCount,
-        moodPercentage: totalMoods !== 0 ? (moodCount / totalMoods) * 100 : 0, // Avoid division by zero, number divided by 0 will return NaN
+        moodPercentage: totalMoods !== 0 ? (moodCount / totalMoods) * 100 : 0, // Prevent division by zero, number divided by 0 will return NaN
       };
     }) ?? [];
 
