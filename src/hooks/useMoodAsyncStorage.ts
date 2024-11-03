@@ -7,8 +7,7 @@ export const useMoodAsyncStorage = () => {
   const [moods, setMoods] = useState<MoodPayload[]>([]);
 
   const fetchMoods = async () => {
-    console.log('retrieving moods');
-    await getData('moods').then(data => setMoods(data ?? []));
+    await getMoods().then(data => setMoods(data ?? []));
   };
 
   useEffect(() => {
@@ -21,8 +20,6 @@ export const useMoodAsyncStorage = () => {
   };
 
   const getMoods = async () => getData('moods');
-
-  console.log(moods);
 
   return {moods, addMood, getMoods};
 };

@@ -1,0 +1,3 @@
+interface AppPreferences {
+  showMode: StatsShowMode;
+}

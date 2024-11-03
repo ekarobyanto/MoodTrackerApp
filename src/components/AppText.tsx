@@ -2,7 +2,7 @@ import {StyleProp, Text, TextStyle} from 'react-native';
 
 interface IAppText {
   style?: StyleProp<TextStyle>;
-  children: string;
+  children: React.ReactNode;
 }
 
 export const AppText: React.FC<IAppText> = ({children, style}) => {
