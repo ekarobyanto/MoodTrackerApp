@@ -47,7 +47,6 @@ export const RootNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        unmountOnBlur: true,
         headerShown: false,
         tabBarInactiveTintColor: 'black',
         tabBarStyle: {
