@@ -1,3 +1,4 @@
+const {withMonicon} = require('@monicon/metro');
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 
 /**
@@ -6,6 +7,15 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {};
+const config = getDefaultConfig(__dirname);
+const configWithMonicon = withMonicon(config, {
+  icons: [
+    'ion:happy',
+    'iconamoon:neutral-face-fill',
+    'tabler:mood-sad-filled',
+    'material-symbols:sentiment-stressed-rounded',
+  ],
+  collections: ['ion', 'iconamoon', 'tabler', 'material-symbols'],
+});
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+module.exports = mergeConfig(getDefaultConfig(__dirname), configWithMonicon);

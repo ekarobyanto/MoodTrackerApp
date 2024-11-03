@@ -1,6 +1,6 @@
 interface Mood {
   title: string;
-  icon: React.FC<{color?: string; size?: number}>;
+  icon: string;
   primaryColor: string;
   backgroundColor: string;
 }

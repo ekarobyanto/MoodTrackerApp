@@ -1,32 +1,25 @@
-import {
-  IconMoodHappy,
-  IconMoodNeutral,
-  IconMoodSad,
-  IconMoodWrrr,
-} from '@tabler/icons-react-native';
-
 export const moods: Mood[] = [
   {
     title: 'Happy',
-    icon: props => <IconMoodHappy {...props} />,
+    icon: 'ion:happy',
     primaryColor: '#FFCF30',
     backgroundColor: '#FFFAE4',
   },
   {
     title: 'Neutral',
-    icon: props => <IconMoodNeutral {...props} />,
+    icon: 'iconamoon:neutral-face-fill',
     primaryColor: '#7DE4EA',
     backgroundColor: '#E8FEFF',
   },
   {
     title: 'Sad',
-    icon: props => <IconMoodSad {...props} />,
+    icon: 'tabler:mood-sad-filled',
     primaryColor: '#4370F2',
     backgroundColor: '#E9EFFF',
   },
   {
     title: 'Stress',
-    icon: props => <IconMoodWrrr {...props} />,
+    icon: 'material-symbols:sentiment-stressed-rounded',
     primaryColor: '#FF2727',
     backgroundColor: '#FFE0E0',
   },

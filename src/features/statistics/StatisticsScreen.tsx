@@ -1,14 +1,11 @@
-import {useEffect, useState} from 'react';
-import {FlatList, View} from 'react-native';
-import {useAppAsyncStorage} from '../../hooks/useAppAsyncStorage';
+import {View} from 'react-native';
 import {AppText} from '../../components/AppText';
-import {MoodCard} from '../home/components/MoodCard';
-import {moods} from '../../data/moods';
+import {useMoodAsyncStorage} from '../../hooks/useMoodAsyncStorage';
 
 export const StatisticsScreen = () => {
-  const {getData} = useAppAsyncStorage();
+  const {moods} = useMoodAsyncStorage();
 
-  const [userMoods, setMoods] = useState();
+  console.log(moods);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -17,13 +14,6 @@ export const StatisticsScreen = () => {
           style={{fontSize: 20, fontWeight: 'bold', textAlign: 'center'}}>
           Statistics
         </AppText>
-        <FlatList
-          data={moods}
-          contentContainerStyle={{gap: 16}}
-          renderItem={({item: mood}) => (
-            <MoodCard mood={mood} onPress={mood => console.log(mood)} />
-          )}
-        />
       </View>
     </View>
   );

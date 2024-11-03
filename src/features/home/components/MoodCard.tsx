@@ -1,5 +1,6 @@
 import {Pressable} from 'react-native';
 import {AppText} from '../../../components/AppText';
+import {Monicon} from '@monicon/native';
 
 interface IMoodCard {
   mood: Mood;
@@ -24,7 +25,7 @@ export const MoodCard: React.FC<IMoodCard> = ({mood, onPress}) => {
           borderColor: isPressed ? mood.primaryColor : 'transparent',
         };
       }}>
-      <mood.icon size={40} color={mood.primaryColor} />
+      <Monicon name={mood.icon} color={mood.primaryColor} size={40} />
       <AppText
         style={{
           color: mood.primaryColor,

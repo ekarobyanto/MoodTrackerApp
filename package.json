@@ -10,6 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@monicon/babel-plugin": "^0.0.151",
+    "@monicon/metro": "^0.0.151",
+    "@monicon/native": "^0.0.151",
     "@react-native-async-storage/async-storage": "^2.0.0",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
@@ -26,6 +29,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
+    "@iconify/json": "^2.2.267",
     "@react-native-community/cli": "15.0.0",
     "@react-native-community/cli-platform-android": "15.0.0",
     "@react-native-community/cli-platform-ios": "15.0.0",
