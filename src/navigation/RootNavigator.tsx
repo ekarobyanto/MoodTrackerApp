@@ -5,6 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import {StyleSheet} from 'react-native';
 import {HomeScreen} from '../features/home/HomeScreen';
 import {AppText} from '../components/AppText';
+import {StatisticsScreen} from '../features/statistics/StatisticsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,6 +13,7 @@ export const RootNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        unmountOnBlur: true,
         headerShown: false,
         tabBarInactiveTintColor: 'black',
         tabBarStyle: {
@@ -37,7 +39,7 @@ export const RootNavigator = () => {
           ),
         }}
         name="Statistics"
-        component={DefaultTemplate}
+        component={StatisticsScreen}
       />
       <Tab.Screen
         options={{

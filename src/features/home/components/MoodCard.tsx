@@ -19,9 +19,9 @@ export const MoodCard: React.FC<IMoodCard> = ({mood, onPress}) => {
           paddingHorizontal: 24,
           alignItems: 'center',
           flexDirection: 'row',
-          borderWidth: isPressed ? 2 : 0,
+          borderWidth: 2,
           backgroundColor: mood.backgroundColor,
-          borderColor: isPressed ? mood.primaryColor : undefined,
+          borderColor: isPressed ? mood.primaryColor : 'transparent',
         };
       }}>
       <mood.icon size={40} color={mood.primaryColor} />
