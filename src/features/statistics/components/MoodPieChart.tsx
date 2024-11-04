@@ -10,6 +10,7 @@ export const MoodPieChart: React.FC<{
       style={{
         padding: 20,
         borderRadius: 4,
+        minHeight: 300,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',

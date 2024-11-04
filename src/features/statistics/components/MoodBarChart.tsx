@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 
 import {MoodStatistics} from '../interface/mood_statistics';
-import {BarChart, PieChart} from 'react-native-gifted-charts';
+import {BarChart} from 'react-native-gifted-charts';
 import Monicon from '@monicon/native';
 
 export const MoodBarChart: React.FC<{
@@ -11,6 +11,7 @@ export const MoodBarChart: React.FC<{
     <View>
       <View
         style={{
+          paddingTop: 20,
           borderRadius: 4,
           backgroundColor: 'white',
           justifyContent: 'center',
@@ -37,7 +38,8 @@ export const MoodBarChart: React.FC<{
             hideYAxisText
             hideAxesAndRules
             spacing={0}
-            barWidth={80}
+            barWidth={70}
+            height={200}
             barMarginBottom={10}
             barBorderTopLeftRadius={8}
             barBorderTopRightRadius={8}
@@ -46,7 +48,7 @@ export const MoodBarChart: React.FC<{
               frontColor: stat.mood.primaryColor,
               topLabelComponent: () => (
                 <Monicon
-                  size={40}
+                  size={30}
                   name={stat.mood.icon}
                   color={stat.mood.primaryColor}
                 />
