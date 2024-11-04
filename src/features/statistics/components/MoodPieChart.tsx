@@ -5,6 +5,8 @@ import {PieChart} from 'react-native-gifted-charts';
 export const MoodPieChart: React.FC<{
   statistics: MoodStatistics[];
 }> = props => {
+  const isOnlyOneMood =
+    props.statistics.filter(stat => stat.moodCount > 0).length === 1;
   return (
     <View
       style={{
@@ -24,7 +26,7 @@ export const MoodPieChart: React.FC<{
         elevation: 2,
       }}>
       <PieChart
-        strokeWidth={2}
+        strokeWidth={isOnlyOneMood ? 0 : 2}
         strokeColor="white"
         data={props.statistics.map(stat => ({
           value: stat.moodCount,
